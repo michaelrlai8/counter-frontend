@@ -1,25 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
+import "./index.css";
+import Button from "./Components/Button";
+import Display from "./Components/Display";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reloadss.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container-count-buttons">
+        <div className="wrapper-count">
+          <Display></Display>
+        </div>
+        <div className="container-buttons">
+          <Button name="Increment"></Button>
+          <Button name="Decrement"></Button>
+          <Button name="Reset"></Button>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
