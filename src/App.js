@@ -1,18 +1,29 @@
 import "./index.css";
-import Button from "./Components/Button";
-import Display from "./Components/Display";
+import { useState } from "react";
 
 const App = () => {
+  const [count, setCount] = useState(0);
+
+  const incr = () => {
+    setCount(count + 1);
+  };
+
+  const decr = () => {
+    setCount(count - 1);
+  };
+
+  const reset = () => {
+    setCount(0);
+  };
+
   return (
     <div className="App">
       <div className="container-count-buttons">
-        <div className="wrapper-count">
-          <Display></Display>
-        </div>
+        <div className="wrapper-count">{count}</div>
         <div className="container-buttons">
-          <Button name="Increment"></Button>
-          <Button name="Decrement"></Button>
-          <Button name="Reset"></Button>
+          <button onClick={incr}>Increment</button>
+          <button onClick={decr}>Decrement</button>
+          <button onClick={reset}>Reset</button>
         </div>
       </div>
     </div>
